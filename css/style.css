@@ -7,6 +7,7 @@
     --text-dark: #1f2937;
     --text-light: #6b7280;
     --border-color: #e5e7eb;
+    --banner-yellow: #fcd34d;
 }
 
 * {
@@ -23,7 +24,7 @@ body {
 
 /* Navigation */
 nav {
-    background-color: white;
+    background-color: var(--banner-yellow);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
