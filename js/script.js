@@ -32,12 +32,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Form submission handler
-    const contactForm = document.querySelector('form');
+    // Form submission handler - send to primary email
+    const contactForm = document.querySelector('.contact-form form');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you for contacting us! We will get back to you soon.');
+
+            const name = this.querySelector('input[type="text"]').value.trim();
+            const email = this.querySelector('input[type="email"]').value.trim();
+            const message = this.querySelector('textarea').value.trim();
+
+            const subject = encodeURIComponent(`New message from ${name || 'Website Contact Form'}`);
+            const body = encodeURIComponent(
+                `Name: ${name}\n` +
+                `Email: ${email}\n\n` +
+                `Message:\n${message}`
+            );
+
+            window.location.href = `mailto:gm@se-logisticseg.com?subject=${subject}&body=${body}`;
             this.reset();
         });
     }
