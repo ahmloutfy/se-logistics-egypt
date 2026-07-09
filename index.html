@@ -5,29 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Send Easy Logistics | SE Logistics Egypt</title>
     
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased">
 
     <!-- Header Banner -->
-    <div style="background-color: #E8C019;" class="shadow-md">
-        <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-            <img src="images/se-banner.png" alt="Send Easy Logistics" class="h-24 object-cover">
-            <div class="text-right">
-                <p class="font-bold text-gray-800" style="font-size: 1.75rem; letter-spacing: 0.05em;">ON TIME, EVERY TIME</p>
+    <div style="background-color: #E8C019;" class="banner-container">
+        <div class="banner-content">
+            <img src="images/se-banner.png" alt="Send Easy Logistics" class="banner-logo">
+            <div class="banner-text">
+                <p>ON TIME, EVERY TIME</p>
             </div>
         </div>
     </div>
 
     <!-- Navigation -->
-    <nav class="sticky top-0 z-50 shadow" style="background-color: #E8C019;">
-        <div class="max-w-7xl mx-auto px-4">
-            <ul class="flex flex-wrap justify-center gap-4 md:gap-8 py-4 md:py-0">
-                <li><a href="#home" class="text-lg font-semibold text-gray-800 hover:text-blue-600 transition">Home</a></li>
-                <li><a href="#services" class="text-lg font-semibold text-gray-800 hover:text-blue-600 transition">Services</a></li>
-                <li><a href="#about" class="text-lg font-semibold text-gray-800 hover:text-blue-600 transition">About Us</a></li>
-                <li><a href="#contact" class="text-lg font-semibold text-gray-800 hover:text-blue-600 transition">Contact</a></li>
+    <nav class="navbar">
+        <div class="nav-container">
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#about" class="nav-link">About Us</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -40,64 +40,92 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-16 px-4 max-w-7xl mx-auto">
-        <h2 class="text-4xl font-bold text-center mb-12">Our Services</h2>
-        <div class="services-grid grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div class="service-card">
-                <img src="images/ocean-freight.jpg" alt="Ocean Freight" class="w-full h-48 object-cover rounded mb-4">
-                <h3>🌊 Ocean Freight</h3>
-                <p>We understand that ocean freight is the backbone of global trade. As a trusted freight forwarding company, we specialize in delivering efficient ocean freight solutions that connect your business to the world.</p>
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="images/ocean-freight.jpg" alt="Ocean Freight" class="card-image">
+                    <h3>🌊 Ocean Freight</h3>
+                    <p>We understand that ocean freight is the backbone of global trade. As a trusted freight forwarding company, we specialize in delivering efficient ocean freight solutions that connect your business to the world.</p>
+                </div>
+                <div class="service-card">
+                    <img src="images/air-freight.jpg" alt="Air Freight" class="card-image">
+                    <h3>✈️ Air Freight</h3>
+                    <p>When time is of the essence, and your cargo needs to reach its destination quickly and efficiently, SendEasy's Air Freight Services are your solution. We specialize in providing swift and reliable air cargo solutions to connect your business to the world.</p>
+                </div>
+                <div class="service-card">
+                    <img src="images/land-freight.jpg" alt="Land Freight" class="card-image">
+                    <h3>🚚 Land Freight</h3>
+                    <p>We understand that efficient and reliable land freight services are the backbone of domestic and cross-border logistics. We offer a comprehensive suite of land transport solutions designed to meet your specific shipping needs.</p>
+                </div>
+                <div class="service-card">
+                    <img src="images/warehouse-service.jpg" alt="Warehouse Service" class="card-image">
+                    <h3>🏭 Warehouse Service</h3>
+                    <p>We know that effective warehousing is a critical component of any successful supply chain. Our comprehensive warehousing and logistics solutions are designed to streamline your operations, improve efficiency, and provide a secure home for your inventory.</p>
+                </div>
+                <div class="service-card">
+                    <img src="images/customs-clearance.jpg" alt="Customs Clearance" class="card-image">
+                    <h3>📋 Customs Clearance</h3>
+                    <p>Navigating the complexities of customs procedures is a crucial aspect of international trade, and at SendEasy, we excel in simplifying this process for our clients. Our comprehensive customs clearance services ensure that your shipments move seamlessly across borders while remaining compliant with all applicable regulations.</p>
+                </div>
             </div>
-            <div class="service-card">
-                <img src="images/air-freight.jpg" alt="Air Freight" class="w-full h-48 object-cover rounded mb-4">
-                <h3>✈️ Air Freight</h3>
-                <p>When time is of the essence, and your cargo needs to reach its destination quickly and efficiently, SendEasy's Air Freight Services are your solution. We specialize in providing swift and reliable air cargo solutions to connect your business to the world.</p>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us">
+        <div class="container">
+            <h2>Why Choose Us?</h2>
+            <div class="reasons-grid">
+                <div class="reason-item">
+                    <strong>Reliability:</strong> Our commitment to on-time deliveries and cargo safety is unwavering. You can trust us to get your goods where they need to go when they need to be there.
+                </div>
+                <div class="reason-item">
+                    <strong>Global Reach:</strong> With an extensive network of partners and agents worldwide, we have a presence in key markets, allowing us to serve you wherever your business takes you.
+                </div>
+                <div class="reason-item">
+                    <strong>Tailored Solutions:</strong> We understand that one size doesn't fit all. Our solutions are customized to your unique requirements, ensuring a seamless fit for your logistics needs.
+                </div>
+                <div class="reason-item">
+                    <strong>Competitive Pricing:</strong> We offer cost-effective solutions without compromising on quality or service.
+                </div>
+                <div class="reason-item">
+                    <strong>Customer-Centric Approach:</strong> Your satisfaction is our top priority. Our dedicated team is always ready to provide personalized support and answers to your questions.
+                </div>
             </div>
-            <div class="service-card">
-                <img src="images/land-freight.jpg" alt="Land Freight" class="w-full h-48 object-cover rounded mb-4">
-                <h3>🚚 Land Freight</h3>
-                <p>We understand that efficient and reliable land freight services are the backbone of domestic and cross-border logistics. We offer a comprehensive suite of land transport solutions designed to meet your specific shipping needs.</p>
-            </div>
-            <div class="service-card">
-                <img src="images/warehouse-service.jpg" alt="Warehouse Service" class="w-full h-48 object-cover rounded mb-4">
-                <h3>🏭 Warehouse Service</h3>
-                <p>We know that effective warehousing is a critical component of any successful supply chain. Our comprehensive warehousing and logistics solutions are designed to streamline your operations, improve efficiency, and provide a secure home for your inventory.</p>
-            </div>
-            <div class="service-card">
-                <img src="images/customs-clearance.jpg" alt="Customs Clearance" class="w-full h-48 object-cover rounded mb-4">
-                <h3>📋 Customs Clearance</h3>
-                <p>Navigating the complexities of customs procedures is a crucial aspect of international trade, and at SendEasy, we excel in simplifying this process for our clients. Our comprehensive customs clearance services ensure that your shipments move seamlessly across borders while remaining compliant with all applicable regulations.</p>
+            <div class="why-choose-us-closing">
+                <p>Thank you for considering SendEasy as your trusted logistics partner. We invite you to join us on a journey of seamless connections, global reach, and unmatched reliability. Together, we'll move your business forward. Contact us today to discuss how we can tailor our services to meet your unique needs.</p>
+                <p class="tagline">Discover the power of efficient logistics with SendEasy.</p>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-16 px-4 bg-white">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-8">About SendEasy</h2>
-            <p class="text-lg text-center text-gray-600 mb-4">
-                At SendEasy, we are more than just a freight forwarding company - we are your trusted logistics partner dedicated to simplifying and streamlining your shipping needs. With a commitment to excellence and a passion for logistics, we provide innovative solutions to make your global supply chain management easier, efficient, and cost-effective.
-            </p>
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>About SendEasy</h2>
+            <p>At SendEasy, we are more than just a freight forwarding company - we are your trusted logistics partner dedicated to simplifying and streamlining your shipping needs. With a commitment to excellence and a passion for logistics, we provide innovative solutions to make your global supply chain management easier, efficient, and cost-effective.</p>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16 px-4 max-w-7xl mx-auto">
-        <h2 class="text-4xl font-bold text-center mb-12">Contact Us</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-                <h3 class="text-2xl font-bold mb-4">Get in Touch</h3>
-                <p class="text-gray-600 mb-4">Have a question or need a quote? Fill out the form and we'll get back to you shortly.</p>
-                <form class="space-y-4">
-                    <input type="text" placeholder="Your Name" required class="w-full px-4 py-2 border border-gray-300 rounded">
-                    <input type="email" placeholder="Your Email" required class="w-full px-4 py-2 border border-gray-300 rounded">
-                    <textarea placeholder="Your Message" rows="5" required class="w-full px-4 py-2 border border-gray-300 rounded"></textarea>
-                    <button type="submit" class="btn btn-primary w-full">Send Message</button>
-                </form>
-            </div>
-            <div>
-                <h3 class="text-2xl font-bold mb-4">Contact Information</h3>
-                <div class="space-y-4">
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <h3>Get in Touch</h3>
+                    <p>Have a question or need a quote? Fill out the form and we'll get back to you shortly.</p>
+                    <form class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
                     <p><strong>Email:</strong> info@selogistics.com</p>
                     <p><strong>Phone:</strong> +20 2 XXXX XXXX</p>
                     <p><strong>Address:</strong> Cairo, Egypt</p>
