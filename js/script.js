@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     console.log('SE Logistics Egypt - Website Loaded');
-    
+
     // Smooth scrolling for navigation links
     const navLinks = document.querySelectorAll('a[href^="#"]');
     navLinks.forEach(link => {
@@ -13,15 +13,21 @@ document.addEventListener('DOMContentLoaded', function() {
             if (targetElement) {
                 targetElement.scrollIntoView({ behavior: 'smooth' });
             }
+
+            // Close mobile menu after clicking a nav link
+            const navMenu = document.getElementById('navMenu');
+            if (navMenu && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+            }
         });
     });
 
-    // Mobile menu toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('nav ul');
-    
-    if (menuToggle) {
-        menuToggle.addEventListener('click', function() {
+    // Mobile menu toggle (fixed selectors to match index.html)
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
+
+    if (mobileMenuBtn && navMenu) {
+        mobileMenuBtn.addEventListener('click', function() {
             navMenu.classList.toggle('active');
         });
     }
@@ -54,9 +60,9 @@ function showNotification(message, type = 'info') {
         z-index: 1000;
         animation: slideIn 0.3s ease;
     `;
-    
+
     document.body.appendChild(notification);
-    
+
     setTimeout(() => {
         notification.style.animation = 'slideOut 0.3s ease';
         setTimeout(() => {
@@ -78,7 +84,7 @@ style.textContent = `
             opacity: 1;
         }
     }
-    
+
     @keyframes slideOut {
         from {
             transform: translateX(0);
