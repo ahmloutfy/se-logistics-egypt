@@ -1,13 +1,13 @@
 /* SE Logistics Egypt - Main Styles */
 
 :root {
-    --primary-color: #E8C019;
+    --primary-color: #1D4ED8;
     --secondary-color: #dc2626;
-    --accent-color: #f59e0b;
+    --accent-color: #0EA5E9;
     --text-dark: #1f2937;
     --text-light: #6b7280;
     --border-color: #e5e7eb;
-    --banner-yellow: #E8C019;
+    --banner-blue: #1E3A8A;
 }
 
 * {
@@ -36,7 +36,7 @@ body {
 
 /* Banner */
 .banner-container {
-    background-color: var(--banner-yellow);
+    background-color: var(--banner-blue);
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     overflow-x: hidden;
 }
@@ -60,7 +60,7 @@ body {
     font-weight: 700;
     font-size: 1.25rem;
     letter-spacing: 0.05em;
-    color: var(--text-dark);
+    color: white;
     text-align: right;
 }
 
@@ -82,7 +82,7 @@ body {
 
 /* Navigation */
 .navbar {
-    background-color: var(--banner-yellow);
+    background-color: var(--banner-blue);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
@@ -110,14 +110,14 @@ body {
 
 .nav-link {
     text-decoration: none;
-    color: var(--text-dark);
+    color: white;
     font-weight: 500;
     transition: color 0.3s ease;
     font-size: 0.95rem;
 }
 
 .nav-link:hover {
-    color: #1e40af;
+    color: var(--accent-color);
 }
 
 .mobile-menu-btn {
@@ -126,7 +126,7 @@ body {
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
-    color: var(--text-dark);
+    color: white;
 }
 
 @media (max-width: 768px) {
@@ -163,7 +163,7 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #1e40af 0%, #dc2626 100%);
+    background: linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%);
     color: white;
     padding: 4rem 1rem 5rem 1rem;
     text-align: center;
@@ -209,13 +209,13 @@ body {
 
 .btn-primary {
     background-color: var(--primary-color);
-    color: #1f2937;
+    color: white;
 }
 
 .btn-primary:hover {
-    background-color: #d4af17;
+    background-color: #1E40AF;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(232, 192, 25, 0.4);
+    box-shadow: 0 4px 12px rgba(29, 78, 216, 0.35);
 }
 
 .btn-secondary {
@@ -355,7 +355,7 @@ body {
 
 /* Why Choose Us Section */
 .why-choose-us {
-    background: linear-gradient(135deg, var(--banner-yellow) 0%, #f0d68f 100%);
+    background: linear-gradient(135deg, var(--banner-blue) 0%, #3B82F6 100%);
     padding: 3rem 1rem;
 }
 
@@ -363,7 +363,7 @@ body {
     font-size: 2.25rem;
     margin-bottom: 3rem;
     text-align: center;
-    color: var(--text-dark);
+    color: white;
 }
 
 .reasons-grid {
@@ -374,20 +374,20 @@ body {
 }
 
 .reason-item {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.95);
     padding: 1.5rem;
     border-radius: 0.5rem;
-    border-left: 4px solid var(--secondary-color);
+    border-left: 4px solid var(--accent-color);
     line-height: 1.8;
 }
 
 .reason-item strong {
-    color: var(--text-dark);
+    color: var(--primary-color);
     font-size: 1rem;
 }
 
 .why-choose-us-closing {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     padding: 2rem;
     border-radius: 0.75rem;
     text-align: center;
@@ -402,7 +402,7 @@ body {
 
 .why-choose-us-closing .tagline {
     font-weight: 600;
-    color: var(--text-dark);
+    color: var(--primary-color);
     font-size: 1rem;
 }
 
@@ -443,7 +443,7 @@ body {
     font-size: 2.25rem;
     text-align: center;
     margin-bottom: 2rem;
-    color: var(--text-dark);
+    color: var(--primary-color);
 }
 
 .about-section p {
@@ -478,7 +478,7 @@ body {
     font-size: 2.25rem;
     text-align: center;
     margin-bottom: 3rem;
-    color: var(--text-dark);
+    color: var(--primary-color);
 }
 
 .contact-content {
@@ -501,7 +501,7 @@ body {
 .contact-info h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: var(--text-dark);
+    color: var(--primary-color);
 }
 
 .contact-form p,
@@ -530,11 +530,11 @@ body {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(232, 192, 25, 0.1);
+    box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.12);
 }
 
 .contact-info strong {
-    color: var(--text-dark);
+    color: var(--primary-color);
 }
 
 @media (max-width: 768px) {
@@ -565,7 +565,7 @@ body {
 
 /* Footer */
 footer {
-    background-color: var(--text-dark);
+    background-color: var(--banner-blue);
     color: white;
     text-align: center;
     padding: 2rem 1rem;
