@@ -105,9 +105,11 @@ nav a:hover {
 /* Service Cards */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .service-card {
@@ -135,6 +137,83 @@ nav a:hover {
     line-height: 1.8;
 }
 
+/* Last two cards centered */
+.services-grid .service-card:nth-child(4),
+.services-grid .service-card:nth-child(5) {
+    grid-column: auto;
+}
+
+.services-grid .service-card:nth-child(4) {
+    grid-column: 1 / 2;
+    margin-left: auto;
+}
+
+.services-grid .service-card:nth-child(5) {
+    grid-column: 2 / 3;
+    margin-right: auto;
+}
+
+/* Why Choose Us Section */
+.why-choose-us {
+    background: linear-gradient(135deg, var(--banner-yellow) 0%, #f0d68f 100%);
+    padding: 4rem 2rem;
+}
+
+.why-choose-us-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.why-choose-us h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: var(--text-dark);
+}
+
+.reasons-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.reason-item {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.reason-item strong {
+    color: var(--text-dark);
+    font-size: 1.1rem;
+}
+
+.reason-item p {
+    color: var(--text-light);
+    margin-top: 0.5rem;
+}
+
+.why-choose-us-closing {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    text-align: center;
+}
+
+.why-choose-us-closing p {
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.why-choose-us-closing .tagline {
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 1.1rem;
+}
+
 /* Footer */
 footer {
     background-color: var(--text-dark);
@@ -154,6 +233,22 @@ footer a:hover {
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .services-grid .service-card:nth-child(4) {
+        grid-column: 1 / 2;
+        margin-left: auto;
+    }
+
+    .services-grid .service-card:nth-child(5) {
+        grid-column: 2 / 3;
+        margin-right: auto;
+    }
+}
+
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
@@ -166,5 +261,19 @@ footer a:hover {
 
     .hero {
         padding: 3rem 1rem 5rem 1rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services-grid .service-card:nth-child(4),
+    .services-grid .service-card:nth-child(5) {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .why-choose-us h2 {
+        font-size: 1.75rem;
     }
 }
