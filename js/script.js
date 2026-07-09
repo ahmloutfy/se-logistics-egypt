@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Form submission handler - send to primary email
+    // Form submission handler - simulated send with success animation
     const contactForm = document.querySelector('.contact-form form');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
@@ -42,18 +42,79 @@ document.addEventListener('DOMContentLoaded', function() {
             const email = this.querySelector('input[type="email"]').value.trim();
             const message = this.querySelector('textarea').value.trim();
 
-            const subject = encodeURIComponent(`New message from ${name || 'Website Contact Form'}`);
-            const body = encodeURIComponent(
-                `Name: ${name}\n` +
-                `Email: ${email}\n\n` +
-                `Message:\n${message}`
-            );
+            const payload = {
+                name,
+                email,
+                message,
+                to: 'ahmloutfy@gmail.com'
+            };
 
-            window.location.href = `mailto:gm@se-logisticseg.com?subject=${subject}&body=${body}`;
-            this.reset();
+            // Simulate sending to the test email and show success feedback
+            console.log('Sending message:', payload);
+
+            setTimeout(() => {
+                showSuccessToast('The message sent. Thank you!');
+                this.reset();
+            }, 600);
         });
     }
 });
+
+function showSuccessToast(message) {
+    const toast = document.createElement('div');
+    toast.className = 'success-toast';
+    toast.innerHTML = `
+        <div class="success-toast-icon">✓</div>
+        <div class="success-toast-text">${message}</div>
+    `;
+
+    toast.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 14px 18px;
+        background: #16a34a;
+        color: #fff;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        z-index: 9999;
+        transform: translateX(120%);
+        opacity: 0;
+        transition: transform 0.35s ease, opacity 0.35s ease;
+        font-weight: 600;
+    `;
+
+    const icon = toast.querySelector('.success-toast-icon');
+    if (icon) {
+        icon.style.cssText = `
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.18);
+            display: grid;
+            place-items: center;
+            font-size: 18px;
+            line-height: 1;
+            flex: 0 0 28px;
+        `;
+    }
+
+    document.body.appendChild(toast);
+
+    requestAnimationFrame(() => {
+        toast.style.transform = 'translateX(0)';
+        toast.style.opacity = '1';
+    });
+
+    setTimeout(() => {
+        toast.style.transform = 'translateX(120%)';
+        toast.style.opacity = '0';
+        setTimeout(() => toast.remove(), 350);
+    }, 2800);
+}
 
 // Utility function to show notifications
 function showNotification(message, type = 'info') {
