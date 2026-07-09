@@ -51,7 +51,7 @@ body {
 }
 
 .banner-logo {
-    height: 140px;
+    height: 80px;
     object-fit: contain;
     max-width: 100%;
 }
@@ -71,7 +71,7 @@ body {
     }
 
     .banner-logo {
-        height: 100px;
+        height: 60px;
         width: 100%;
     }
 
