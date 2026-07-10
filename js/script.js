@@ -32,39 +32,58 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Form submission handler - simulated send with success animation
+    // Form submission handler - Formspree
     const contactForm = document.querySelector('.contact-form form');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.action = 'https://formspree.io/f/mgvwqjyn';
+        contactForm.method = 'POST';
+
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
 
-            const name = this.querySelector('input[type="text"]').value.trim();
-            const email = this.querySelector('input[type="email"]').value.trim();
-            const message = this.querySelector('textarea').value.trim();
-
+            const formData = new FormData(this);
             const payload = {
-                name,
-                email,
-                message,
-                to: 'ahmloutfy@gmail.com'
+                name: this.querySelector('input[type="text"]').value.trim(),
+                email: this.querySelector('input[type="email"]').value.trim(),
+                message: this.querySelector('textarea').value.trim(),
             };
 
-            // Simulate sending to the test email and show success feedback
-            console.log('Sending message:', payload);
+            try {
+                const response = await fetch(this.action, {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json'
+                    },
+                    body: formData
+                });
 
-            setTimeout(() => {
-                showSuccessToast('The message sent. Thank you!');
-                this.reset();
-            }, 600);
+                if (response.ok) {
+                    showSuccessToast('The message sent. Thank you!');
+                    this.reset();
+                } else {
+                    showErrorToast('Sorry, there was a problem sending your message.');
+                }
+            } catch (error) {
+                console.error('Formspree error:', error);
+                showErrorToast('Sorry, there was a problem sending your message.');
+            }
         });
     }
 });
 
 function showSuccessToast(message) {
+    showToast(message, '#16a34a', '✓');
+}
+
+function showErrorToast(message) {
+    showToast(message, '#dc2626', '!');
+}
+
+function showToast(message, bgColor, iconText) {
     const toast = document.createElement('div');
     toast.className = 'success-toast';
     toast.innerHTML = `
-        <div class="success-toast-icon">✓</div>
+        <div class="success-toast-icon">${iconText}</div>
         <div class="success-toast-text">${message}</div>
     `;
 
@@ -76,7 +95,7 @@ function showSuccessToast(message) {
         align-items: center;
         gap: 12px;
         padding: 14px 18px;
-        background: #16a34a;
+        background: ${bgColor};
         color: #fff;
         border-radius: 12px;
         box-shadow: 0 8px 24px rgba(0,0,0,0.2);
@@ -114,34 +133,6 @@ function showSuccessToast(message) {
         toast.style.opacity = '0';
         setTimeout(() => toast.remove(), 350);
     }, 2800);
-}
-
-// Utility function to show notifications
-function showNotification(message, type = 'info') {
-    const notification = document.createElement('div');
-    notification.className = `notification ${type}`;
-    notification.textContent = message;
-    notification.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        padding: 1rem 1.5rem;
-        background-color: ${type === 'success' ? '#10b981' : '#3b82f6'};
-        color: white;
-        border-radius: 0.5rem;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        z-index: 1000;
-        animation: slideIn 0.3s ease;
-    `;
-
-    document.body.appendChild(notification);
-
-    setTimeout(() => {
-        notification.style.animation = 'slideOut 0.3s ease';
-        setTimeout(() => {
-            notification.remove();
-        }, 300);
-    }, 3000);
 }
 
 // Add animation styles
